@@ -1,3 +1,7 @@
+0.04 2017-04-23T20:13:00+0200
+
+ - Downgrade Mojolicious dependency to latest released version
+
 0.03 2017-04-23T19:54:57+0200
 
  - Stray line broke 0.02 :(
