@@ -20,7 +20,7 @@ WriteMakefile(
 ,
   PREREQ_PM => {
   'Linux::Inotify2' => '0',
-  'Mojolicious' => '7.31'
+  'Mojolicious' => '7.30'
 }
 ,
   test => {TESTS => (-e 'META.yml' ? 't/*.t' : 't/*.t xt/*.t')},
