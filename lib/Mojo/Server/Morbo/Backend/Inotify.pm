@@ -1,0 +1,55 @@
+package Mojo::Server::Morbo::Backend::Inotify;
+
+use Mojo::Base 'Mojo::Server::Morbo::Backend';
+
+use Linux::Inotify2;
+use Mojo::File 'path';
+use IO::Select;
+
+has _inotify => sub {
+  my $self = shift;
+  my $i    = Linux::Inotify2->new();
+  $i->watch($_, IN_MODIFY)
+    or die "Could not watch $_: $!"
+    for grep { -e $_ }
+    map { path($_)->list_tree({dir => 1})->each, $_ } @{$self->watch};
+  $i->blocking(0);
+  return $i;
+};
+
+sub modified_files {
+  my $self = shift;
+
+  my $select = IO::Select->new($self->_inotify->fileno);
+  $select->can_read($self->watch_timeout);
+  return [map { $_->{w}{name} } $self->_inotify->read];
+}
+
+1;
+
+=encoding utf8
+
+=head1 NAME
+
+Mojo::Server::Morbo::Backend::Inotify - Sample Morbo Inotify watcher
+
+=head1 SYNOPSIS
+
+  my $backend=Mojo::Server::Morbo::Backend::Inotify->new();
+  if ($backend->modified_files) {...}
+
+=head1 DESCRIPTION
+
+Sample
+
+=head1 METHODS
+
+L<Mojo::Server::Morbo::Backend::Inotify> inherits all methods from
+L<Mojo::Server::Morbo::Backend>.
+
+=head1 SEE ALSO
+
+L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicious.org>.
+
+=cut
+
