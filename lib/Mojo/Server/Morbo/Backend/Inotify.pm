@@ -1,13 +1,13 @@
 package Mojo::Server::Morbo::Backend::Inotify;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Mojo::Base 'Mojo::Server::Morbo::Backend';
 
 use Linux::Inotify2;
 use Mojo::File 'path';
 use IO::Select;
-U
+
 has _inotify => sub {
   my $self = shift;
   my $i    = Linux::Inotify2->new();
