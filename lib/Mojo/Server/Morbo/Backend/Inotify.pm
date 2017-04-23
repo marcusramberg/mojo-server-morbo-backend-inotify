@@ -1,13 +1,13 @@
 package Mojo::Server::Morbo::Backend::Inotify;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Mojo::Base 'Mojo::Server::Morbo::Backend';
 
 use Linux::Inotify2;
 use Mojo::File 'path';
 use IO::Select;
-
+U
 has _inotify => sub {
   my $self = shift;
   my $i    = Linux::Inotify2->new();
@@ -42,12 +42,17 @@ Mojo::Server::Morbo::Backend::Inotify - Sample Morbo Inotify watcher
 
 =head1 DESCRIPTION
 
-Sample
+To use this module, start morbo with the argument -b Inotify
 
 =head1 METHODS
 
 L<Mojo::Server::Morbo::Backend::Inotify> inherits all methods from
 L<Mojo::Server::Morbo::Backend>.
+
+=head2 modified_files
+
+Looks for modified files using L<Linux::Inotify2>
+
 
 =head1 SEE ALSO
 
@@ -55,7 +60,7 @@ L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicious.org>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2008-2017, Marcus Ramberg 
+Copyright (C) 2008-2017, Marcus Ramberg
 
 This program is free software, you can redistribute it and/or modify it under
 the terms of the Artistic License version 2.0.

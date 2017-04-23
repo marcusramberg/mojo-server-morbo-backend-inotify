@@ -61,11 +61,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Mojo::Server::Morbo::Backend::Inotify
 NAME_SYM = Mojo_Server_Morbo_Backend_Inotify
-VERSION = 0.01
+VERSION = 0.02
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_01
+VERSION_SYM = 0_02
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.01
+XS_VERSION = 0.02
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -260,7 +260,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = Mojo-Server-Morbo-Backend-Inotify
-DISTVNAME = Mojo-Server-Morbo-Backend-Inotify-0.01
+DISTVNAME = Mojo-Server-Morbo-Backend-Inotify-0.02
 
 
 # --- MakeMaker macro section:
@@ -511,7 +511,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '  bugtracker: https://github.com/marcusramberg/mojo-server-morbo-backend-inotify/issues' >> META_new.yml
 	$(NOECHO) $(ECHO) '  homepage: https://github.com/marcusramberg/mojo-server-morbo-backend-inotify' >> META_new.yml
 	$(NOECHO) $(ECHO) '  repository: https://github.com/marcusramberg/mojo-server-morbo-backend-inotify.git' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version: '\''0.01'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: '\''0.02'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'x_serialization_backend: '\''CPAN::Meta::YAML version 0.018'\''' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
@@ -564,7 +564,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '         "url" : "https://github.com/marcusramberg/mojo-server-morbo-backend-inotify.git"' >> META_new.json
 	$(NOECHO) $(ECHO) '      }' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
-	$(NOECHO) $(ECHO) '   "version" : "0.01",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "0.02",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "x_serialization_backend" : "JSON::PP version 2.27300"' >> META_new.json
 	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
@@ -874,7 +874,7 @@ testdb_static :: static pure_all
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="Mojo-Server-Morbo-Backend-Inotify" VERSION="0.01">' > Mojo-Server-Morbo-Backend-Inotify.ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="Mojo-Server-Morbo-Backend-Inotify" VERSION="0.02">' > Mojo-Server-Morbo-Backend-Inotify.ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>Sample Morbo Inotify watcher</ABSTRACT>' >> Mojo-Server-Morbo-Backend-Inotify.ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Marcus Ramberg &lt;marcus.ramberg@gmail.com&gt;</AUTHOR>' >> Mojo-Server-Morbo-Backend-Inotify.ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> Mojo-Server-Morbo-Backend-Inotify.ppd

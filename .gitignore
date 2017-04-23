@@ -3,3 +3,5 @@
 *.old
 *.swp
 /local
+blib
+pm_to_blib

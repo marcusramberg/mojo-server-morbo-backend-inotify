@@ -6,11 +6,14 @@ SYNOPSIS
       if ($backend->modified_files) {...}
 
 DESCRIPTION
-    Sample
+    To use this module, start morbo with the argument -b Inotify
 
 METHODS
     Mojo::Server::Morbo::Backend::Inotify inherits all methods from
     Mojo::Server::Morbo::Backend.
+
+  modified_files
+    Looks for modified files using Linux::Inotify2
 
 SEE ALSO
     Mojolicious, Mojolicious::Guides, <http://mojolicious.org>.
