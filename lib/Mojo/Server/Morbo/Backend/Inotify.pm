@@ -1,5 +1,7 @@
 package Mojo::Server::Morbo::Backend::Inotify;
 
+our $VERSION = '0.01';
+
 use Mojo::Base 'Mojo::Server::Morbo::Backend';
 
 use Linux::Inotify2;
