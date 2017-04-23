@@ -5,3 +5,7 @@
 /local
 blib
 pm_to_blib
+MANIFEST
+MYMETA.json
+MYMETA.yml
+Makefile
