@@ -1,6 +1,6 @@
 package Mojo::Server::Morbo::Backend::Inotify;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Mojo::Base 'Mojo::Server::Morbo::Backend';
 
